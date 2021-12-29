@@ -1,0 +1,28 @@
+{
+  "name": "api2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.1",
+    "mongod": "^2.0.0",
+    "mongodb": "^4.2.2",
+    "mongoose": "^6.1.2",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "underscore": "^1.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
