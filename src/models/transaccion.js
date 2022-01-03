@@ -47,6 +47,7 @@ const  transaccionSchema = new mongoose.Schema ({
     TipoTransaccion: String, 
     Motivo: String,
     Monto: String,
-    Fecha: String
+    Fecha: String,
+    EstadoTrans: String
 });
 module.exports = mongoose.model('transaccion', transaccionSchema);

@@ -49,16 +49,21 @@ module.exports = {
 //no tener jsons vacios a veces jala
     index: async (req, res, next) => {
         const transacciones = await transaccion.find({});    
-        //responde a los que consuman la api 
-        res.status(200).json(transacciones);
+        //como se responde a los que consuman la api 
+        res.send("transaccion realizada");
+        
+        //res.status(200).json(transacciones);
         //throw new Error('error controllador mijo');
     
     },
     //nueva peticion recivida
     newTransaccion: async (req,res, next) =>{
+        //aqui se valida
         const newTransaccion = new transaccion(req.body);
         const transaccionTemp = await newTransaccion.save();
-        res.status(200).json(transaccionTemp);
+        const resTrans = {IdTransaccion: transaccionTemp._id,EstadoTrans: "Transaccion Completada", Fecha: transaccionTemp.Fecha, Monto: transaccionTemp.Monto  }
+        //res.status(200).json(transaccionTemp);
+        res.status(200).json(resTrans);
     },
     //verificcar el nombre de los parametros  para mgdb userId/idtransaccion
     getTransaccion: async (req, res, next) =>{
